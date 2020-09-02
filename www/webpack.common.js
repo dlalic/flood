@@ -8,7 +8,9 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin(['index.html', 'favicon.ico'])
+    new CopyWebpackPlugin({
+       patterns: ['index.html', 'favicon.ico'],
+     }),
   ],
   output: {
     filename: 'bootstrap.js',

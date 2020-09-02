@@ -11,7 +11,6 @@
     "css-loader": "^4.2.2",
     "file-loader": "^6.1.0",
     "style-loader": "^1.0.0",
-    "wasm": "file:../pkg",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5",
@@ -20,6 +19,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.11.1",
     "bootstrap-css-only": "^4.3.1",
-    "chart.js": "^2.9.3"
+    "chart.js": "^2.9.3",
+    "wasm": "file:../pkg"
   }
 }
