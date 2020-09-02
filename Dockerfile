@@ -2,7 +2,7 @@ FROM rust:1.46-buster AS builder
 
 RUN apt-get update
 RUN curl -sL https://deb.nodesource.com/setup_11.x | bash -
-RUN apt-get install -y nodejs
+RUN apt-get install -y --no-install-recommends nodejs
 
 WORKDIR /usr/src/app
 COPY . .
@@ -15,7 +15,7 @@ ENV NODE_ENV=production
 RUN npm install
 RUN npm run build
 
-FROM nginx:latest
+FROM nginx:1.19
 COPY --from=builder /usr/src/app/www/default.conf.template /etc/nginx/conf.d/default.conf.template
 COPY --from=builder /usr/src/app/www/nginx.conf /etc/nginx/nginx.conf
 COPY --from=builder /usr/src/app/www/dist /usr/share/nginx/html
