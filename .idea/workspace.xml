@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0ff48132-0ad9-4930-b9eb-705f212c84cc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Rust File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="reufatxa" />
+  </component>
+  <component name="ProjectId" id="1gx5S7B1DaHvq1sg9v6SvmDCUV3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/fill" />
+    </key>
+  </component>
+  <component name="RunManager" selected="wasm-pack.Build">
+    <configuration name="Clippy" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="clippy" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Build" type="WasmPackCommandRunConfiguration" factoryName="wasm-pack" nameIsGenerated="true">
+      <option name="command" value="build" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Cargo Command.Clippy" />
+      <item itemvalue="wasm-pack.Build" />
+    </list>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+    <option name="version" value="2" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="WindowStateProjectService">
+    <state x="184" y="85" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599071057645">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state x="184" y="85" width="1071" height="700" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.801@0.23.1440.801" timestamp="1599071057645" />
+    <state x="438" y="232" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599059338759">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state x="438" y="232" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.801@0.23.1440.801" timestamp="1599059338759" />
+    <state width="1398" height="203" key="GridCell.Tab.0.bottom" timestamp="1599072007599">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="1398" height="203" key="GridCell.Tab.0.bottom/0.23.1440.801@0.23.1440.801" timestamp="1599072007599" />
+    <state width="1398" height="203" key="GridCell.Tab.0.center" timestamp="1599072007598">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="1398" height="203" key="GridCell.Tab.0.center/0.23.1440.801@0.23.1440.801" timestamp="1599072007598" />
+    <state width="1398" height="203" key="GridCell.Tab.0.left" timestamp="1599072007597">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="1398" height="203" key="GridCell.Tab.0.left/0.23.1440.801@0.23.1440.801" timestamp="1599072007597" />
+    <state width="1398" height="203" key="GridCell.Tab.0.right" timestamp="1599072007598">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="1398" height="203" key="GridCell.Tab.0.right/0.23.1440.801@0.23.1440.801" timestamp="1599072007598" />
+    <state x="221" y="63" key="SettingsEditor" timestamp="1599071991943">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state x="221" y="63" key="SettingsEditor/0.23.1440.801@0.23.1440.801" timestamp="1599071991943" />
+    <state x="518" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599069700223">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state x="518" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.801@0.23.1440.801" timestamp="1599069700223" />
+    <state x="421" y="178" width="690" height="490" key="find.popup" timestamp="1599072022604">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state x="421" y="178" width="690" height="490" key="find.popup/0.23.1440.801@0.23.1440.801" timestamp="1599072022604" />
+  </component>
+</project>
