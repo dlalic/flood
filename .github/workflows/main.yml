@@ -85,11 +85,9 @@ jobs:
     name: Test deployment
     runs-on: ubuntu-latest
     steps:
-      - name: Running git checkout
         uses: actions/checkout@v2
-      - name: Build docker image
         run: |
-          sudo docker build .
+          docker build .
 
   deploy:
     name: Deploy
