@@ -37,13 +37,13 @@ var barChartData = {
   datasets: [
     {
       label: 'Elevation',
-      backgroundColor: '#D2691E',
+      backgroundColor: '#4f2509',
       barPercentage: 1.0,
       categoryPercentage: 1.0,
     },
     {
       label: 'Water level',
-      backgroundColor: '#F0F8FF',
+      backgroundColor: '#4169E1',
       barPercentage: 1.0,
       categoryPercentage: 1.0,
     }
