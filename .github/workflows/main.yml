@@ -81,6 +81,15 @@ jobs:
           command: clippy
           args: -- -D warnings
 
+  test_deployment:
+    name: Test deployment
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          command: docker
+          args: build .
+
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
