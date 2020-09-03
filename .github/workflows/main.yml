@@ -89,6 +89,6 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.4.6 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "murmuring-dusk-08097"
+          heroku_app_name: "quiet-gorge-24460"
           heroku_email: "dunja.lalic@gmail.com"
           usedocker: true

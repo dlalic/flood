@@ -8,13 +8,24 @@ use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
 pub struct Landscape {
     elevations: Vec<Point>,
+    current_elevations: Vec<Point>,
     water_levels: Vec<Rational64>,
+}
+
+impl Default for Landscape {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 /// Public methods, exported to JavaScript.
 #[wasm_bindgen]
 impl Landscape {
-    pub fn new(input: &str) -> Landscape {
+    pub fn new() -> Landscape {
+        Self::default()
+    }
+
+    pub fn set_elevations(&mut self, input: &str) {
         let elevations: Vec<Point> = input
             .split(',')
             .enumerate()
@@ -23,10 +34,8 @@ impl Landscape {
                 elevation: Rational64::from_integer(value.parse().unwrap()),
             })
             .collect();
-        Self {
-            elevations,
-            water_levels: vec![],
-        }
+        self.elevations = elevations;
+        self.current_elevations = vec![];
     }
 
     pub fn elevations_count(&self) -> usize {
@@ -45,6 +54,19 @@ impl Landscape {
     }
 
     pub fn update(&mut self) {
-        self.water_levels = fill_depressions(&self.elevations);
+        if self.current_elevations.is_empty() {
+            self.water_levels = fill_depressions(&self.elevations);
+        } else {
+            self.water_levels = fill_depressions(&self.current_elevations);
+        }
+        self.current_elevations = self
+            .water_levels
+            .iter()
+            .enumerate()
+            .map(|(index, elevation)| Point {
+                index: index as u64,
+                elevation: *elevation,
+            })
+            .collect();
     }
 }
