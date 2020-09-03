@@ -13,7 +13,7 @@ RUN wasm-pack build --release
 WORKDIR /usr/src/app/www
 ENV NODE_ENV=production
 RUN npm install
-RUN npm run build --verbose
+RUN npm run build
 
 FROM nginx:1.19
 COPY --from=builder /usr/src/app/www/default.conf.template /etc/nginx/conf.d/default.conf.template
