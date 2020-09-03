@@ -5,6 +5,8 @@
 
 ## Usage
 
+[Online demo](https://quiet-gorge-24460.herokuapp.com/)
+
 ### Build wasm
 
 ```
