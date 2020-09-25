@@ -3,13 +3,12 @@ use std::ops::AddAssign;
 
 use num_rational::Rational64;
 
-use crate::fill::local_minimum::local_minimum;
+use crate::fill::minima::minima;
 use crate::fill::point::Point;
 
 /// Priority queue based algorithm inspired by
 /// "Another Fast and Simple DEM Depression-Filling Algorithm Based on Priority Queue Structure"
 /// by LIU Yong-He, ZHANG Wan-Chang, XU Jing-Wen
-/// http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.464.4511&rep=rep1&type=pdf
 pub fn fill_depressions(input: &[Point]) -> Vec<Rational64> {
     let mut binary_heap = BinaryHeap::new();
     let mut water_levels = vec![];
@@ -24,50 +23,21 @@ pub fn fill_depressions(input: &[Point]) -> Vec<Rational64> {
             None => break,
             Some(current) => {
                 let current_index = current.index as usize;
-                // Next highest point
-                let next = binary_heap.peek();
-                println!("Current: {:?}\nNext:    {:?}", current, next);
-                if let Some(next_peak) = next {
-                    let next_index = next_peak.index as usize;
-                    // Fill local minimum between 2 elevation points
-                    let local_minimum = local_minimum(&water_levels, current_index, next_index);
-                    if let Some(index_of_minimum) = local_minimum {
-                        println!("Filling local minimum at index {:?}", index_of_minimum);
-                        water_levels[index_of_minimum].add_assign(Rational64::from_integer(1));
-                    } else {
-                        fill_global_minimum(&mut water_levels);
-                    }
-                } else {
-                    fill_global_minimum(&mut water_levels);
+                println!("Current index {:?}", current_index);
+                let minima = minima(&water_levels, current_index);
+                let count = minima.len() as i64;
+                for index_of_minimum in minima {
+                    let amount = Rational64::new(1 as i64, count);
+                    println!(
+                        "Filling local minimum at index {:?} {:?}",
+                        index_of_minimum, amount
+                    );
+                    water_levels[index_of_minimum].add_assign(amount);
                 }
             }
         }
     }
     water_levels
-}
-
-fn fill_global_minimum(water_levels: &mut Vec<Rational64>) {
-    let global_minimum = &water_levels.iter().min().cloned();
-    if let Some(value_of_minimum) = global_minimum {
-        let count = water_levels
-            .iter()
-            .filter(|v| **v == *value_of_minimum)
-            .count();
-        let ratio = Rational64::new(1 as i64, count as i64);
-        println!(
-            "Global minimum is {:?}",
-            *value_of_minimum.numer() as f64 / *value_of_minimum.denom() as f64
-        );
-        println!(
-            "Filling global minimums with {:?}",
-            *ratio.numer() as f64 / *ratio.denom() as f64
-        );
-        for water_level in water_levels.iter_mut() {
-            if *water_level == *value_of_minimum {
-                water_level.add_assign(ratio);
-            }
-        }
-    }
 }
 
 #[cfg(test)]

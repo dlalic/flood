@@ -7,25 +7,34 @@
 </head>
 <body>
 <main class="main">
-    <nav class="navbar navbar-expand navbar-light bg-light" id="nav-bar">
+    <nav class="navbar navbar-expand navbar-light bg-light justify-content-between" id="nav-bar">
         <a class="navbar-brand" href="#">Flood</a>
+        <a href="https://github.com/dlalic/flood">Source code</a>
     </nav>
     <div class="container">
         <br/>
-        <div class="row">
-            <form id="form">
-                <div class="row">
-                    <div class="col">
-                        <input type="text" class="form-control" id="input" placeholder="1,2,3,4" value="3,1,6,4,8,9">
+        <div class="row align-items-center">
+            <div class="col">
+                Click anywhere to start filling water
+            </div>
+            <div class="col">
+                <form id="form" class="form-inline justify-content-end">
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <label for="input">Input values:</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" class="form-control" id="input" placeholder="1,2,3,4" value="3,1,6,4,8,9">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
                     </div>
-                    <div class="col">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
         <br/>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" id="canvas_row">
             <canvas id="canvas"></canvas>
         </div>
     </div>
