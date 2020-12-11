@@ -14,7 +14,7 @@
     "webpack": "^4.44.2",
     "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^3.1.5",
-    "webpack-merge": "^5.4.1",
+    "webpack-merge": "^5.5.0",
     "@fortawesome/fontawesome-free": "^5.15.1",
     "bootstrap-css-only": "^4.3.1",
     "chart.js": "^2.9.4",
