@@ -1,7 +1,7 @@
-FROM rust:1.46-buster AS builder
+FROM rust:1.49-buster AS builder
 
 RUN apt-get update
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install -y --no-install-recommends nodejs
 
 WORKDIR /usr/src/app
