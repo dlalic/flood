@@ -27,7 +27,7 @@ pub fn fill_depressions(input: &[Point]) -> Vec<Rational64> {
                 let minima = minima(&water_levels, current_index);
                 let count = minima.len() as i64;
                 for index_of_minimum in minima {
-                    let amount = Rational64::new(1 as i64, count);
+                    let amount = Rational64::new(1, count);
                     println!(
                         "Filling local minimum at index {:?} {:?}",
                         index_of_minimum, amount
