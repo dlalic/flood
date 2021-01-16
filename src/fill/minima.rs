@@ -1,6 +1,5 @@
 use num_rational::Rational64;
 use std::collections::HashSet;
-use std::iter::FromIterator;
 
 pub fn minima(input: &[Rational64], index: usize) -> Vec<usize> {
     let mut left = find_minima(input, index, Direction::Left);
@@ -16,8 +15,8 @@ pub fn minima(input: &[Rational64], index: usize) -> Vec<usize> {
         }
     }
     let result = [left, right].concat();
-    let deduped: HashSet<&usize> = HashSet::from_iter(result.iter());
-    let result = Vec::from_iter(deduped.iter().map(|v| **v));
+    let deduped: HashSet<&usize> = result.iter().collect();
+    let result = deduped.iter().map(|v| **v).collect();
     result
 }
 
