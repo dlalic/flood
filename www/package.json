@@ -15,7 +15,7 @@
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3",
-    "@fortawesome/fontawesome-free": "^5.15.2",
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "bootstrap-css-only": "^4.3.1",
     "chart.js": "^2.9.4",
     "wasm": "file:../pkg"
