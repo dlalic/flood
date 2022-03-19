@@ -1,3 +1,6 @@
+// https://github.com/rustwasm/wasm-bindgen/issues/2774
+#![allow(clippy::unused_unit)]
+
 pub mod fill;
 
 use crate::fill::fill_depressions::fill_depressions;
