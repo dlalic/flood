@@ -85,11 +85,21 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
+    concurrency:
+      group: "${{ github.ref_name }}"
+      cancel-in-progress: true
     steps:
-      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.8.8
+      - name: Install and configure the Koyeb CLI
+        uses: koyeb-community/koyeb-actions@v2
         with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "quiet-gorge-24460"
-          heroku_email: "dunja.lalic@gmail.com"
-          usedocker: true
+          api_token: "${{ secrets.KOYEB_APP_TOKEN }}"
+      - name: Build and deploy the application
+        uses: koyeb/action-git-deploy@v1
+        with:
+          app-name: flood-${{ github.ref_name }}
+          service-env: "PORT=8080"
+          service-ports: "8080:http"
+          service-routes: "/:8080"
+          git-builder: docker
+          git-docker-dockerfile: Dockerfile
+          skip-cache: true
