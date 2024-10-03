@@ -97,6 +97,7 @@ jobs:
         uses: koyeb/action-git-deploy@v1
         with:
           app-name: flood
+          service-name: flood
           service-env: "PORT=8080"
           service-ports: "8080:http"
           service-routes: "/:8080"
