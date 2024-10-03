@@ -12,7 +12,12 @@ pub struct Landscape {
     water_levels: Vec<Rational64>,
 }
 
-/// Public methods, exported to JavaScript.
+impl Default for Landscape {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 #[wasm_bindgen]
 impl Landscape {
     pub fn new() -> Landscape {
