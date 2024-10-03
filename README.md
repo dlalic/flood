@@ -5,12 +5,12 @@
 
 ## Usage
 
-[Online demo](https://quiet-gorge-24460.herokuapp.com/)
+[Online demo](https://flood-dlalic-4e5cb431.koyeb.app/s)
 
-### Build wasm
+### Build
 
 ```
-wasm-pack build
+npm run build
 ```
 
 ### Run
