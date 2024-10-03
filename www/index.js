@@ -1,5 +1,5 @@
+import Chart from 'chart.js/auto'
 import { Landscape } from 'wasm'
-import Chart from 'chart.js'
 
 const ctx = document.getElementById('canvas')
 const chart = new Chart(ctx, {
@@ -7,15 +7,15 @@ const chart = new Chart(ctx, {
   options: {
     responsive: true,
     scales: {
-      xAxes: [{
+      x: {
         stacked: true
-      }],
-      yAxes: [{
+      },
+      y: {
         stacked: true,
         ticks: {
           stepSize: 0.5
         }
-      }]
+      }
     },
     animation: {
       duration: 0
@@ -23,7 +23,7 @@ const chart = new Chart(ctx, {
   }
 })
 
-var barChartData = {
+let barChartData = {
   datasets: [
     {
       label: 'Elevation',
@@ -46,7 +46,7 @@ form.addEventListener('submit', (event) => {
   update()
 })
 
-window.addEventListener('click', event => {
+window.addEventListener('click', () => {
   fill()
 })
 

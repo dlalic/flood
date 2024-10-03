@@ -1,20 +1,23 @@
-const path = require('path')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WasmPackPlugin = require("@wasm-tool/wasm-pack-plugin");
 
 module.exports = {
-  entry: {
-    app: './bootstrap.js'
+  entry: './bootstrap.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bootstrap.js',
   },
   plugins: [
-    new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
-      patterns: ['index.html', 'favicon.ico']
+    new HtmlWebpackPlugin({
+      template: 'index.html'
+    }),
+    new WasmPackPlugin({
+      crateDirectory: path.resolve(__dirname, ".")
     })
   ],
-  output: {
-    filename: 'bootstrap.js',
-    path: path.resolve(__dirname, 'dist')
+  experiments: {
+    asyncWebAssembly: true
   },
   module: {
     rules: [

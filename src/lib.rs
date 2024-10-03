@@ -1,6 +1,3 @@
-// https://github.com/rustwasm/wasm-bindgen/issues/2774
-#![allow(clippy::unused_unit)]
-
 pub mod fill;
 
 use crate::fill::fill_depressions::fill_depressions;
@@ -15,17 +12,15 @@ pub struct Landscape {
     water_levels: Vec<Rational64>,
 }
 
-impl Default for Landscape {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
 /// Public methods, exported to JavaScript.
 #[wasm_bindgen]
 impl Landscape {
     pub fn new() -> Landscape {
-        Self::default()
+        Landscape {
+            elevations: vec![],
+            current_elevations: vec![],
+            water_levels: vec![],
+        }
     }
 
     pub fn set_elevations(&mut self, input: &str) {
