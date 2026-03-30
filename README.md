@@ -5,7 +5,7 @@
 
 ## Usage
 
-[Online demo](https://flood-dlalic-4e5cb431.koyeb.app/s)
+[Online demo](https://flood-dlalic-4e5cb431.koyeb.app/)
 
 ### Build
 
